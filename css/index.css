@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+}
+
+/* تصميم Navbar */
+.header1 {
+    background-color: rgba(1, 0, 8, 0.911);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* لون الخلفية */
+    position: relative;
+    /* لتحديد موقع العناصر */
+}
+
+/* تصميم اللوجو */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* تصميم الروابط */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    /* تأثير التغيير اللوني */
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+    /* تغيير لون الروابط عند التحويم */
+}
+
+/* تصميم قائمة التنقل عند الشاشات الصغيرة */
+.menu-toggle {
+    display: none;
+    /* مخفية بشكل افتراضي */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    /* تأثير التحول */
+}
+
+/* تصميم متجاوب */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* إخفاء الروابط في الشاشات الصغيرة */
+        flex-direction: column;
+        /* تغيير الاتجاه إلى عمودي */
+        position: absolute;
+        /* يجعلها تتداخل مع navbar */
+        top: 60px;
+        /* لتظهر تحت navbar */
+        left: 0;
+        right: 0;
+        background-color: rgb(0, 0, 0, 0.5);
+        padding: 20px 0;
+        /* إضافة تباعد */
+        border-radius: 5px;
+        /* زوايا دائرية */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* ظل للقائمة */
+        z-index: 999;
+        /* رفع مستوى الظهور */
+    }
+
+    .nav-links.show {
+        display: flex;
+        /* إظهار الروابط عند النقر على الأيقونة */
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* إظهار أيقونة القائمة */
+    }
+}
+
+/* start hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    /* تأخذ الصورة 100vh */
+    overflow: hidden;
+    /* إخفاء الجزء الزائد من الصورة */
+    position: relative;
+    bottom: 100px;
+    z-index: -1;
+    background-image: url(../img3/pexels-cherryyphoto-4729060-min.jpg);
+    background-size: cover;
+}
+
+/* تصميم الصورة */
+.responsive-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    /* جعل ارتفاع الصورة 100% */
+    min-width: 100%;
+    /* جعل عرض الصورة 100% على الأقل */
+    min-height: 100%;
+    /* جعل ارتفاع الصورة 100% على الأقل */
+    transform: translate(-50%, -50%);
+    /* توسيط الصورة */
+    object-fit: cover;
+    /* الحفاظ على نسبة الصورة */
+
+}
+
+/* تصميم طبقة التراكب */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* تأثير التعتيم */
+    z-index: 1;
+    /* تأكد من أن التراكب يظهر فوق الصورة */
+}
+
+@media (max-width:768px) {
+    .hero {
+        background-image: url(../img3/pexels-cherryyphoto-4729060-min.jpg);
+        background-size: cover;
+    }
+}
+
+/* end hero */
+
+/* start about us */
+
+.circel-home {
+    position: relative;
+    bottom: 50px;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+
+}
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px; /* maximum width for larger screens */
+    margin: 0 auto; /* center the container */
+}
+
+
+/* Styling for the paragraph */
+.about p {
+    font-size: 1.1em; /* default font size */
+    line-height: 1.8; /* spacing between lines */
+    color: #444; /* text color */
+    margin: 15px;
+    padding: 20px; /* padding inside the paragraph */
+    border-radius: 10px; /* rounded corners */
+    background-color: #fff; /* background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* border shadow effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about p {
+        font-size: 1em; /* smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about p {
+        font-size: 0.9em; /* even smaller font size for small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.about-us .container {
+    max-width: 1200px;
+    /* الحد الأقصى لعرض المحتوى */
+    margin: 0 auto;
+    /* المركز العمودي */
+}
+
+/* Card styling */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* Image styling */
+.card-img {
+    width: 100%;
+    /* يجعل الصورة تأخذ عرض العنصر بالكامل */
+    height: auto;
+    /* يحافظ على نسبة الطول إلى العرض */
+}
+
+/* Text styling */
+.card-body p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+    margin: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-body p {
+        font-size: 1em;
+        /* حجم النص للشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-body p {
+        font-size: 0.9em;
+        /* حجم النص للشاشات الصغيرة */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        /* مسافة بين البطاقات في الشاشات الصغيرة */
+    }
+}
+
+
+
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Box shadow for the card */
+.shadow-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the image */
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 20px;
+}
+
+.card-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-text {
+        font-size: 1em; /* smaller font size for medium screens */
+    }
+
+    .card {
+        margin-bottom: 15px; /* add space between cards on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-text {
+        font-size: 0.9em; /* even smaller font size for small screens */
+    }
+}
+
+
+
+
+
+.icon-container {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 999;
+}
+
+/* Icon Style */
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Social Links Hidden Initially */
+.social-links {
+    display: none;
+    position: absolute;
+    top: -400%;
+    right: 2px;
+    width: 100px;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons */
+.social-links a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .social-links img {
+        width: 35px;
+        height: 35px;
+    }
+.social-links {
+    display: none;
+    position: absolute;
+    top: -600%;
+    right: 2px;
+    width: 100px;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+}
+footer {
+    background-color: #f9f8fd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* حاوية الفوتر */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق الشعار */
+.footer-logo img {
+    width: 100px; /* حجم الشعار */
+    height: auto;
+}
+
+/* تنسيق الروابط */
+.footer-links {
+    display: flex;
+    gap: 20px; /* المسافة بين الروابط */
+}
+.footer-links a{
+    color: #000000 !important;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* حقوق النشر */
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #0a0a0a; /* لون أفتح قليلاً من النص العادي */
+    background-color: #6b68fa;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* تجعل المحتويات في الفوتر رأسية بدلاً من أفقية */
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .footer-copyright {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+/* dark mode */
+  /* body.dark-mode {
+    background-color: #2e2e2e;
+    color: white;
+} */
+
+/* زر تبديل الوضع الليلي */
+/* .toggle-btn {
+    display: block;
+    margin: 50px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #555;
+} */
+/* dark mode */

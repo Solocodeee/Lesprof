@@ -1,0 +1,595 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+}
+
+/* تصميم Navbar */
+.header1 {
+    background-color: rgba(0, 0, 0, 0.945);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* لون الخلفية */
+    position: relative;
+    /* لتحديد موقع العناصر */
+}
+
+/* تصميم اللوجو */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* تصميم الروابط */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    /* تأثير التغيير اللوني */
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+    /* تغيير لون الروابط عند التحويم */
+}
+
+/* تصميم قائمة التنقل عند الشاشات الصغيرة */
+.menu-toggle {
+    display: none;
+    /* مخفية بشكل افتراضي */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    /* تأثير التحول */
+}
+
+/* تصميم متجاوب */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* إخفاء الروابط في الشاشات الصغيرة */
+        flex-direction: column;
+        /* تغيير الاتجاه إلى عمودي */
+        position: absolute;
+        /* يجعلها تتداخل مع navbar */
+        top: 60px;
+        /* لتظهر تحت navbar */
+        left: 0;
+        right: 0;
+        background-color: rgb(0, 0, 0, 0.5);
+        padding: 20px 0;
+        /* إضافة تباعد */
+        border-radius: 5px;
+        /* زوايا دائرية */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* ظل للقائمة */
+        z-index: 999;
+        /* رفع مستوى الظهور */
+    }
+
+    .nav-links.show {
+        display: flex;
+        /* إظهار الروابط عند النقر على الأيقونة */
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* إظهار أيقونة القائمة */
+    }
+}
+
+
+.hero {
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    background-image: url(./img/01\ \(2\).jpg);
+    background-size: cover; /* تغطي الخلفية بشكل كامل */
+    background-position: center; /* تمركز الصورة في منتصف العنصر */
+    position: relative;
+
+}
+
+/* تصميم الصورة */
+.responsive-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    /* جعل ارتفاع الصورة 100% */
+    min-width: 100%;
+    /* جعل عرض الصورة 100% على الأقل */
+    min-height: 100%;
+    /* جعل ارتفاع الصورة 100% على الأقل */
+    transform: translate(-50%, -50%);
+    /* توسيط الصورة */
+    object-fit: cover;
+    /* الحفاظ على نسبة الصورة */
+
+}
+
+/* تصميم طبقة التراكب */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* تأثير التعتيم */
+    z-index: 1;
+    
+    /* تأكد من أن التراكب يظهر فوق الصورة */
+}
+
+@media (max-width:768px) {
+    .hero {
+        background-image: url(./img/01\ \(2\).jpg);
+        background-size: cover;
+    }
+}
+
+/* end hero */
+
+
+
+.textall .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px; 
+    margin-top: 100px;
+  }
+  
+  .textall .box {
+    flex: 1 1 calc(50% - 20px); /* نصين متساويين */
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  /* استجابة للشاشات */
+  @media (max-width: 768px) {
+    .box {
+      flex: 1 1 100%; /* العرض كله في الشاشات الصغيرة */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.2em; /* تكبير الخط في الشاشات الكبيرة */
+    }
+  }
+  
+
+
+  .bodytext1 {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* بوكس شادو */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%; /* عرض الحاوية بالنسبة للشاشة */
+    margin: 0 auto; /* مركزة في الصفحة */
+}
+
+/* التحكم في حجم النص */
+.bodytext1 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.bodytext1 p {
+    margin-bottom: 10px;
+}
+
+/* تنسيق الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .bodytext1 {
+        max-width: 800px; /* عرض محدد للشاشات الكبيرة */
+    }
+
+    .bodytext1 h3 {
+        font-size: 2rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+ 
+    .bodytext1 p {
+        font-size: 1.1rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+}
+
+/* تنسيق الشاشات الصغيرة */
+@media (max-width: 767px) {
+    .bodytext1 h3 {
+        font-size: 1.2rem; /* تصغير النص للشاشات الصغيرة */
+    }
+
+    .bodytext1 p {
+        font-size: 0.95rem; /* تصغير النص للشاشات الصغيرة */
+    }
+}
+
+.bodytext2 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* النصوص */
+.bodytext2 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bodytext2 p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* تنسيق الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .bodytext2 .bodytext2 {
+        max-width: 800px; /* عرض محدد للشاشات الكبيرة */
+    }
+
+    .bodytext2 h3 {
+        font-size: 2.5rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+
+    .bodytext2 p {
+        font-size: 1.25rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+}
+
+/* تنسيق الشاشات الصغيرة */
+@media (max-width: 767px) {
+    .bodytext2 h3 {
+        font-size: 1.2rem; /* تصغير النص للشاشات الصغيرة */
+    }
+
+    .bodytext2 p {
+        font-size: 0.9rem; /* تصغير النص للشاشات الصغيرة */
+    }
+}
+
+
+
+
+
+
+
+.container-border {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* البوكس شادو */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+/* النصوص */
+.container-border  h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.container-border  h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.container-border  p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ترتيب العناصر بشكل أفقي */
+.container-border  .right {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.container-border  .left-text {
+    flex: 1;
+}
+
+/* تصميم الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .container-border {
+        flex-direction: row; /* تحويل الحاوية لعرض أفقي */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container-border  .right {
+        flex: 0 0 10%; /* العرض يكون 10% للشاشات الكبيرة */
+        text-align: center;
+    }
+
+    .container-border  .left-text {
+        flex: 1;
+        padding-left: 20px;
+    }
+
+    .container-border  h1 {
+        font-size: 3.5rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+
+    .container-border  p {
+        font-size: 1.25rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+}
+
+
+.end {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* البوكس شادو */
+    width: 100%; /* عرض كامل */
+    max-width: 100%; /* أقصى عرض يساوي 100% */
+}
+
+/* النصوص */
+
+.end h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+.end h2 {
+    font-size: 1.5rem;
+}
+
+
+.end h3 {
+    font-size: 1.25rem;
+}
+
+
+.end p, li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.end li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* تنسيق الشاشات الكبيرة */
+@media (min-width: 768px) {
+    .end {
+        width: 100%; /* عرض كامل */
+        max-width: 100%; /* أقصى عرض يساوي 100% */
+    }
+
+    
+.end h2 {
+        font-size: 2.5rem; /* تكبير النص في الشاشات الكبيرة */
+    }
+
+    
+.end h3 {
+        font-size: 2rem;
+    }
+
+    
+.end p, li {
+        font-size: 1.25rem;
+    }
+}
+
+/* تنسيق الشاشات الصغيرة */
+@media (max-width: 767px) {
+    
+.end h2 {
+        font-size: 1.25rem; /* تصغير النص للشاشات الصغيرة */
+    }
+
+    
+.end             h3 {
+    font-size: 1rem;
+}
+
+ .end p, li {
+    font-size: 0.9rem; /* تصغير النص للشاشات الصغيرة */
+}
+}
+
+footer {
+    background-color: #f9f8fd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* حاوية الفوتر */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق الشعار */
+.footer-logo img {
+    width: 100px; /* حجم الشعار */
+    height: auto;
+}
+
+/* تنسيق الروابط */
+.footer-links {
+    display: flex;
+    gap: 20px; /* المسافة بين الروابط */
+}
+.footer-links a{
+    color: #000000 !important;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* حقوق النشر */
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #0a0a0a; /* لون أفتح قليلاً من النص العادي */
+    background-color: #6b68fa;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* تجعل المحتويات في الفوتر رأسية بدلاً من أفقية */
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .footer-copyright {
+        font-size: 0.9rem;
+    }
+}
+.icon-container {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 999;
+}
+
+/* Icon Style */
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Social Links Hidden Initially */
+.social-links {
+    display: none;
+    position: absolute;
+    top: -400%;
+    right: 2px;
+    width: 100px;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons */
+.social-links a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .social-links img {
+        width: 35px;
+        height: 35px;
+    }
+.social-links {
+    display: none;
+    position: absolute;
+    top: -600%;
+    right: 2px;
+    width: 100px;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+}
+
+
+  
+
+
+

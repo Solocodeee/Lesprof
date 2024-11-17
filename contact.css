@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+}
+
+/* تصميم Navbar */
+.header1 {
+    background-color: rgb(0, 0, 0);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* لون الخلفية */
+    position: relative;
+    /* لتحديد موقع العناصر */
+}
+
+/* تصميم اللوجو */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* تصميم الروابط */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    /* تأثير التغيير اللوني */
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+    /* تغيير لون الروابط عند التحويم */
+}
+
+/* تصميم قائمة التنقل عند الشاشات الصغيرة */
+.menu-toggle {
+    display: none;
+    /* مخفية بشكل افتراضي */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    /* تأثير التحول */
+}
+
+/* تصميم متجاوب */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* إخفاء الروابط في الشاشات الصغيرة */
+        flex-direction: column;
+        /* تغيير الاتجاه إلى عمودي */
+        position: absolute;
+        /* يجعلها تتداخل مع navbar */
+        top: 60px;
+        /* لتظهر تحت navbar */
+        left: 0;
+        right: 0;
+        background-color: rgb(0, 0, 0, 0.5);
+        padding: 20px 0;
+        /* إضافة تباعد */
+        border-radius: 5px;
+        /* زوايا دائرية */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* ظل للقائمة */
+        z-index: 999;
+        /* رفع مستوى الظهور */
+    }
+
+    .nav-links.show {
+        display: flex;
+        /* إظهار الروابط عند النقر على الأيقونة */
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* إظهار أيقونة القائمة */
+    }
+}
+
+
+
+.hero {
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    background-image: url(./img/02.jpg);
+    background-size: cover; /* تغطي الخلفية بشكل كامل */
+    background-position: center; /* تمركز الصورة في منتصف العنصر */
+    position: relative;
+
+}
+/* @keyframes slider {
+        0%{background-image: url(./img/02.jpg);}
+        30%{background-image: url(./img/01\ \(1\).jpg);}
+        60%{background-image: url(./img/01\ \(2\).jpg);}
+        100%{background-image: url(./img/03.jpg);}
+} */
+
+/* تصميم الصورة */
+.responsive-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    /* جعل ارتفاع الصورة 100% */
+    min-width: 100%;
+    /* جعل عرض الصورة 100% على الأقل */
+    min-height: 100%;
+    /* جعل ارتفاع الصورة 100% على الأقل */
+    transform: translate(-50%, -50%);
+    /* توسيط الصورة */
+    object-fit: cover;
+    /* الحفاظ على نسبة الصورة */
+
+}
+
+/* تصميم طبقة التراكب */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* تأثير التعتيم */
+    z-index: 1;
+    /* تأكد من أن التراكب يظهر فوق الصورة */
+}
+
+@media (max-width:768px) {
+    .hero {
+        background-image: url(./img/02.jpg);
+        background-size: cover;
+    }
+}
+
+/* end hero */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #f9f8fd;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* حاوية الفوتر */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق الشعار */
+.footer-logo img {
+    width: 100px; /* حجم الشعار */
+    height: auto;
+}
+
+/* تنسيق الروابط */
+.footer-links {
+    display: flex;
+    gap: 20px; /* المسافة بين الروابط */
+}
+.footer-links a{
+    color: #000000 !important;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* حقوق النشر */
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #0a0a0a; /* لون أفتح قليلاً من النص العادي */
+    background-color: #6b68fa;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* تجعل المحتويات في الفوتر رأسية بدلاً من أفقية */
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .footer-copyright {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 30px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .contact-btn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .social-links a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        font-size: 20px;
+    }
+}
